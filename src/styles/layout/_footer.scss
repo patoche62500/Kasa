@@ -1,0 +1,19 @@
+footer {
+  padding: 66px 120.313px 58px 121.094px;
+  color: white;
+  background-color: black;
+
+  @include min1080 {
+    padding: 66px 464px 29px 463px;
+  }
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include min1080 {
+      gap: 28.56px;
+    }
+  }
+}

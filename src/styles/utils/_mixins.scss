@@ -1,0 +1,21 @@
+// 768 Tablette IPad
+// 1080 Tablette Petit Desktop
+// 1440 Grand Desktop
+
+@mixin min768() {
+    @media (min-width: 768px) {
+      @content;
+    }
+  }
+  
+  @mixin min1080() {
+    @media (min-width: 1080px) {
+      @content;
+    }
+  }
+  
+  @mixin max1440() {
+    @media (max-width: 1440px) {
+      @content;
+    }
+  }

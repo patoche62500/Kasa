@@ -1,0 +1,54 @@
+header {
+  padding: 20px 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  nav {
+    width: 190px;
+  }
+
+  ul {
+    display: flex;
+    gap: 26px;
+    justify-content: flex-end;
+    li a {
+      color: #ff6060;
+      font-size: 12px;
+      
+    }
+  }
+
+  div svg {
+    width: 145px;
+    height: 46.881px;
+  }
+
+  @include min1080 {
+    nav {
+      width: 309px;
+    }
+
+    div svg {
+      width: 210.322px;
+      height: 68px;
+    }
+
+    ul {
+      gap: 57px;
+
+      li a {
+        font-size: 24px;
+      }
+    }
+  }
+}
+
+.select--on{
+    border-bottom: 1px solid #ff6060;
+}
+
+.select--off{
+
+    border: 0;
+}
