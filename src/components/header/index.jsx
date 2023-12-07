@@ -5,9 +5,11 @@ let old;
 function handleClick(e) {
   if (old) {
     old.className = "select--off";
+  } else {
+    const containerNav = document.querySelector("#container__nav").children[0];
+    containerNav.className = "select--off";
   }
 
-  //e.target
   e.target.parentElement.className = "select--on";
   old = e.target.parentElement;
 }
@@ -46,7 +48,7 @@ function Header() {
         </svg>{" "}
       </div>
       <nav>
-        <ul>
+        <ul id="container__nav">
           <li className="select--on" onClick={handleClick}>
             <Link to="/">Accueil</Link>
           </li>
