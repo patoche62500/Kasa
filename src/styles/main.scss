@@ -20,7 +20,11 @@ Layout
 /*
 @import "layout/_navigation.scss";
 @import "layout/section";
-Components
+Components*/
+@import "components/_banner.scss";
+@import "components/_card.scss";
+@import "components/_galery.scss";
+/*
 @import "components/_cards.scss";
 
 @import "components/_button.scss";
