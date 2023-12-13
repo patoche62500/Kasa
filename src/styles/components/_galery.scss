@@ -12,4 +12,8 @@
   border-radius: 25px;
   background: #f6f6f6;
   max-width: 1240px;
+
+  @include min1080 {
+    gap: 60px;
+  }
 }

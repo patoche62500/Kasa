@@ -5,6 +5,11 @@
   border-radius: 10px;
   background: #ff6060;
 
+  @include min1080 {
+    width: 340px;
+    height: 340px;
+  }
+
   img {
     height: 100%;
     object-fit: cover;
