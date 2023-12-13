@@ -1,21 +1,35 @@
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import ErrorPage from "../pages/Error";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "../pages/Home";
 import About from "../pages/About";
+import Layout from "../pages/layout";
+import Logement, { loader as logementloader } from "../pages/Logement";
 
-import Header from "../components/header/index"
-import Footer from "../components/footer/index"
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Layout />,
+    errorElement: <ErrorPage />,
+    children: [
+      {
+        path: "/",
+        element: <Home />,
+      },
+      {
+        path: "/About",
+        element: <About />,
+      },
+      {
+        path: "logements/:logementId",
+        loader: logementloader,
+        element: <Logement />,
+      },
+    ],
+  },
+]);
 
 function ManageRoute() {
-  return (
-    <Router>
-      <Header />
-      <Routes>
-        <Route path="/" Component={Home} />
-        <Route path="/about" Component={About} />
-      </Routes>
-      <Footer />
-    </Router>
-  );
+  return <RouterProvider router={router} />;
 }
 
 export default ManageRoute;

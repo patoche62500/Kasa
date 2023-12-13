@@ -6,7 +6,6 @@ header {
   max-width: 1340px;
   margin: auto;
 
-
   nav {
     width: 190px;
   }
@@ -18,7 +17,6 @@ header {
     li a {
       color: #ff6060;
       font-size: 12px;
-      
     }
   }
 
@@ -47,11 +45,10 @@ header {
   }
 }
 
-.select--on{
-    border-bottom: 1px solid #ff6060;
+.active {
+  border-bottom: 1px solid #ff6060;
 }
 
-.select--off{
-
-    border: 0;
+.pending {
+  border: 0;
 }

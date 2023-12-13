@@ -1,24 +1,9 @@
-import { Link } from "react-router-dom";
-
-let old;
-
-function handleClick(e) {
-  if (old) {
-    old.className = "select--off";
-  } else {
-    const containerNav = document.querySelector("#container__nav").children[0];
-    containerNav.className = "select--off";
-  }
-
-  e.target.parentElement.className = "select--on";
-  old = e.target.parentElement;
-}
+import { NavLink } from "react-router-dom";
 
 function Header() {
   return (
     <header>
       <div className="container__header">
-      
         <svg
           width="211"
           height="68"
@@ -50,15 +35,29 @@ function Header() {
       </div>
       <nav>
         <ul id="container__nav">
-          <li className="select--on" onClick={handleClick}>
-            <Link to="/">Accueil</Link>
+          <li>
+            <NavLink
+              to="/"
+              className={({ isActive, isPending }) =>
+                isPending ? "pending" : isActive ? "active" : ""
+              }
+            >
+              Accueil
+            </NavLink>
           </li>
-          <li onClick={handleClick}>
-            <Link to="/about">A Propos</Link>
+          <li>
+            <NavLink
+              to="/About"
+              className={({ isActive, isPending }) =>
+                isPending ? "pending" : isActive ? "active" : ""
+              }
+            >
+              A Propos
+            </NavLink>
           </li>
         </ul>
       </nav>
-      
+      {/* Remplacemencer link  par navlink */}
     </header>
   );
 }

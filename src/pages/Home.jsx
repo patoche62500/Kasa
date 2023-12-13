@@ -4,9 +4,10 @@ import Galery from "../components/galery";
 
 function Home() {
   return (
-    <>
-      <Banner /> <Galery />
-    </>
+    <main>
+      <Banner />
+      <Galery />
+    </main>
   );
 }
 
