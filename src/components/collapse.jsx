@@ -1,59 +1,56 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 
 function Collapse({ title }) {
+  const content = useRef(null);
+  const [maxHeightContent, setMaxHeightContent] = useState("0px");
   const [bIsOpen, setbIsOpen] = useState(false);
-  //const [bIsRender, setbIsRender] = useState(true);
 
   useEffect(() => {
-    console.log("effect");
+    console.log(bIsOpen);
+    if (bIsOpen) {
+      // 32 et les padding du container 16 en haut 16 en bas
+      setMaxHeightContent(`${content.current.scrollHeight + 32}px`);
+    } else {
+      setMaxHeightContent("0px");
+    }
   }, [bIsOpen]);
-
   return (
     <div className="container__collapse">
       <div className="collapse__box">
         <p>{title}</p>
-        <button onClick={() => setbIsOpen(bIsOpen ? false : true)}>
-          {bIsOpen ? (
-            <svg
-              width="32"
-              height="32"
-              viewBox="0 0 32 32"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M20.8069 21.0195C20.3606 21.4658 19.6358 21.4658 19.1896 21.0195L12.3347 14.1647C11.8884 13.7184 11.8884 12.9937 12.3347 12.5474C12.781 12.1011 13.5057 12.1011 13.952 12.5474L20 18.5953L26.048 12.5509C26.4943 12.1047 27.219 12.1047 27.6653 12.5509C28.1116 12.9972 28.1116 13.722 27.6653 14.1683L20.8104 21.0231L20.8069 21.0195Z"
-                fill="white"
-              />
-            </svg>
-          ) : (
-            <svg
-              width="32"
-              height="31"
-              viewBox="0 0 32 31"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M11.1931 10.2642C11.6394 9.81787 12.3642 9.81787 12.8104 10.2642L19.6653 17.119C20.1116 17.5653 20.1116 18.29 19.6653 18.7363C19.219 19.1826 18.4943 19.1826 18.048 18.7363L12 12.6883L5.95203 18.7327C5.50575 19.179 4.78099 19.179 4.33471 18.7327C3.88843 18.2865 3.88843 17.5617 4.33471 17.1154L11.1896 10.2606L11.1931 10.2642Z"
-                fill="white"
-              />
-            </svg>
-          )}
+        <button
+          className={`collapse__box__arrow ${bIsOpen && "is-active"}`}
+          onClick={() => setbIsOpen(!bIsOpen)}
+        >
+          <svg
+            viewBox="0 0 32 33"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M14.7897 11.4315C15.4591 10.7621 16.5462 10.7621 17.2157 11.4315L27.4979 21.7138C28.1674 22.3832 28.1674 23.4703 27.4979 24.1398C26.8285 24.8092 25.7414 24.8092 25.072 24.1398L16 15.0678L6.92804 24.1344C6.25862 24.8038 5.17148 24.8038 4.50206 24.1344C3.83265 23.465 3.83265 22.3778 4.50206 21.7084L14.7843 11.4262L14.7897 11.4315Z"
+              fill="white"
+            />
+          </svg>
         </button>
       </div>
-      {bIsOpen ? (
-        <div className="collapse__content">
+      <div
+        ref={content}
+        className={`collapse__content ${
+          bIsOpen && "is-active"
+        }`} style={{maxHeight:maxHeightContent}}
+      >
+        <div className={`collapse__content__inside ${bIsOpen && "is-active"}`}>
           <p>
             Climatisation Wi-Fi Cuisine Espace de travail Fer à repasser
-            Sèche-cheveux Cintres
+            Sèche-cheveux Cintres Climatisation Wi-Fi Cuisine Espace de travail
+            Fer à repasser Sèche-cheveux CintresClimatisation Wi-Fi Cuisine
+            Espace de travail Fer à repasser Sèche-cheveux CintresClimatisation
+            Wi-Fi Cuisine Espace de travail Fer à repasser Sèche-cheveux Cintres
           </p>
         </div>
-      ) : (
-        <div></div>
-      )}
+      </div>
     </div>
   );
 }
-
 export default Collapse;
