@@ -1,11 +1,12 @@
 import React from "react";
 import Banner from "../components/banner";
 import Galery from "../components/galery";
+import imageSrc from "../assets/banner/banner.png";
 
 function Home() {
   return (
     <main>
-      <Banner />
+      <Banner imageSrc={imageSrc} bIsText={true}/>
       <Galery />
     </main>
   );

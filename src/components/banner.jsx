@@ -1,6 +1,6 @@
-import imageSrc from "../assets/banner/banner.png";
 
-function banner() {
+
+function banner({imageSrc, bIsText=true}) {
   return (
     <section className="section__banner">
       <div className="container__banner">
@@ -9,8 +9,8 @@ function banner() {
         </div>
 
         <div className="background"></div>
-
-        <h1 className="banner__text">Chez vous, partout et ailleurs</h1>
+        {bIsText?<h1 className="banner__text">Chez vous, partout et ailleurs</h1>:null}
+        
       </div>
     </section>
   );
