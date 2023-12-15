@@ -1,9 +1,12 @@
 import { useLoaderData, redirect } from "react-router-dom";
 import JsonData from "../datas/logements.json";
+import Slideshow from "../components/slideshow";
 
 export async function loader({ params }) {
   const logement = JsonData.filter((element) => {
-    if (element.title.toLowerCase().split(" ").join("_") === params.logementId) {
+    if (
+      element.title.toLowerCase().split(" ").join("_") === params.logementId
+    ) {
       return element;
     }
   });
@@ -18,7 +21,13 @@ export async function loader({ params }) {
 
 function Logement() {
   const { logement } = useLoaderData();
-  return <div>{JSON.stringify(logement)}</div>;
+  console.log(logement[0].pictures[0])
+  return (
+    <div>
+      {<Slideshow Image={logement[0].pictures[0]}/>}
+      <div> {JSON.stringify(logement)}</div>
+    </div>
+  );
 }
 
 export default Logement;
