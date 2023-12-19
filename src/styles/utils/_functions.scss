@@ -1,0 +1,5 @@
+@function CalculateWidth($Total, $Valeur) {
+  $result: calc(($Total - $Valeur) / 2);
+
+  @return #{$result}px;
+}

@@ -1,0 +1,29 @@
+$color-globale: var(--colorColor);
+/*Header Variable*/
+$bg-color-header: var(--bgheader);
+$Gap-Globale: Var(--gap);
+/* */
+$color-primaire: var(--ColorPrimaire);
+$color-secondaire: var(--ColorSecondaire);
+$color-tertiaire: var(--ColorTertiaire);
+
+/* Declaration des variables */
+:root {
+  // Color //
+  /* Globable */
+  --ColorPrimaire: #FF6060;
+  --ColorSecondaire: #FFF;
+  --ColorTertiaire: #99e2d0;
+
+  /* font */
+
+  --fonttexte: "Montserrat";
+  --fontcolor: white;
+
+  /* Border */
+  --bordercolor: yellow;
+  --bordersize: 1px;
+  --bordertype: solid;
+
+  color: $color-globale;
+}

@@ -3,10 +3,12 @@
 /*
 @import "base/_typography.scss";
 @import "base/_fonts.scss";
-Utils
-@import "utils/_variables.scss";
-@import "utils/_functions.scss";
 */
+/*Utils*/
+@import "utils/_variables.scss";
+
+@import "utils/_functions.scss";
+
 @import "utils/_mixins.scss";
 /*
 @import "utils/_helpers.scss";

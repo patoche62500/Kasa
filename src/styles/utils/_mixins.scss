@@ -3,19 +3,44 @@
 // 1440 Grand Desktop
 
 @mixin min768() {
-    @media (min-width: 768px) {
-      @content;
-    }
+  @media (min-width: 768px) {
+    @content;
   }
-  
-  @mixin min1080() {
-    @media (min-width: 1080px) {
-      @content;
-    }
+}
+
+@mixin min1080() {
+  @media (min-width: 1080px) {
+    @content;
   }
-  
-  @mixin max1440() {
-    @media (max-width: 1440px) {
-      @content;
-    }
+}
+
+@mixin max1440() {
+  @media (max-width: 1440px) {
+    @content;
   }
+}
+
+@mixin withMax($Total, $Valeur) {
+  padding-left: CalculateWidth($Total, $Valeur);
+  padding-right: CalculateWidth($Total, $Valeur);
+}
+
+@mixin font(
+  $color: rgb(0, 0, 0),
+  $fontfamily: "Roboto",
+  $fontsize: 16px,
+  $font-style: normal,
+  $font-weight: 500,
+  $line-height: normal,
+  $text-align: left
+) {
+  color: $color;
+  font-family: $fontfamily;
+  font-size: $fontsize;
+  font-style: $font-style;
+  font-weight: $font-weight;
+  line-height: $line-height;
+  @if $text-align != left {
+    text-align: $text-align;
+  }
+}

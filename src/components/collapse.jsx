@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 
-function Collapse({ title }) {
+function Collapse({ title, contentCollapse, description }) {
   const content = useRef(null);
   const [maxHeightContent, setMaxHeightContent] = useState("0px");
   const [bIsOpen, setbIsOpen] = useState(false);
@@ -36,18 +36,23 @@ function Collapse({ title }) {
       </div>
       <div
         ref={content}
-        className={`collapse__content ${
-          bIsOpen && "is-active"
-        }`} style={{maxHeight:maxHeightContent}}
+        className={`collapse__content ${bIsOpen && "is-active"}`}
+        style={{ maxHeight: maxHeightContent }}
       >
         <div className={`collapse__content__inside ${bIsOpen && "is-active"}`}>
-          <p>
-            Climatisation Wi-Fi Cuisine Espace de travail Fer à repasser
+          <ul>
+            {!description ? contentCollapse.map((element,index) => (
+              <li key={index}>{element}</li>
+            )) : <li>{description}</li>
+            
+            }
+
+            {/*Climatisation Wi-Fi Cuisine Espace de travail Fer à repasser
             Sèche-cheveux Cintres Climatisation Wi-Fi Cuisine Espace de travail
             Fer à repasser Sèche-cheveux CintresClimatisation Wi-Fi Cuisine
             Espace de travail Fer à repasser Sèche-cheveux CintresClimatisation
-            Wi-Fi Cuisine Espace de travail Fer à repasser Sèche-cheveux Cintres
-          </p>
+      Wi-Fi Cuisine Espace de travail Fer à repasser Sèche-cheveux Cintres*/}
+          </ul>
         </div>
       </div>
     </div>
