@@ -1,10 +1,16 @@
 header {
-  padding: 20px 50px;
+  padding: 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   max-width: 1340px;
   margin: auto;
+
+  @include min1080 {
+    @include withMax(1440, 1240);
+    padding-top: 45px;
+    padding-bottom: 50px;
+  }
 
   nav {
     width: 190px;
@@ -16,7 +22,12 @@ header {
     justify-content: flex-end;
     li a {
       color: #ff6060;
+      text-align: right;
+      font-family: Montserrat;
       font-size: 12px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 17.112px;
     }
   }
 
@@ -39,7 +50,13 @@ header {
       gap: 57px;
 
       li a {
+        color: #ff6060;
+        text-align: right;
+        font-family: Montserrat;
         font-size: 24px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 34.224px;
       }
     }
   }

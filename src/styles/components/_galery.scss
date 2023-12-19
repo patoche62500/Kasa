@@ -1,6 +1,10 @@
 .section__galery {
   display: flex;
   justify-content: center;
+
+  @include min1080() {
+    @include withMax(1440, 1240);
+  }
 }
 
 .container__galery {
@@ -9,11 +13,11 @@
   gap: 20px;
   padding: 50px;
   justify-content: center;
-  border-radius: 25px;
-  background: #f6f6f6;
-  max-width: 1240px;
 
   @include min1080 {
     gap: 60px;
+    border-radius: 25px;
+    background: #f6f6f6;
+    max-width: 1240px;
   }
 }

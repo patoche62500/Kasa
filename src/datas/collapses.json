@@ -1,0 +1,9 @@
+[
+  {
+    "name": "Fiabilité",
+    "description": "Les annonces postées sur Kasa garentissent une fiabilité totale. Les photos sont conformes aux logements, et toutes les informations sont régulièrement vérifiées par nos équipes."
+  },
+  { "name": "Respect", "description": "La bienveillance fais partie des valeurs fondatrices de Kasa. Tout Comportement discriminatoire ou de perturbation du voisnage entraînera une exclusion de notre plateforme." },
+  { "name": "Service", "description": "La bienveillance fais partie des valeurs fondatrices de Kasa. Tout Comportement discriminatoire ou de perturbation du voisnage entraînera une exclusion de notre plateforme." },
+  { "name": "Sécurité", "description": "La sécurité est la priorité de Kasa. Aussi bien pour nos hôtes que pour nos voyageurs, chaque logement correspond aux critères de sécurité établis par nos services. En laissant une note aussi bien a l'hôtes qu'au locataire, cela permet à nos équipes de vérifier que les standards sont bien respectés. Nous organisons également des ateliers sur la sécurité domestiques pour nos hôtes." }
+]

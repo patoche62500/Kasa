@@ -17,7 +17,7 @@ export async function loader({ params }) {
   //console.log(params);
 
   if (logement.length === 0) {
-    return redirect("/");
+    return redirect("/404");
   }
 
   return { logement };
@@ -25,6 +25,9 @@ export async function loader({ params }) {
 
 function Logement() {
   const { logement } = useLoaderData();
+
+  const name = logement[0].host.name.split(' ');
+
   //console.log(logement[0].pictures[0])
 
   const elementsForLoop = [];
@@ -82,7 +85,7 @@ function Logement() {
         <ul className="container__rating">{elementsForLoop}</ul>
 
         <div>
-          <p>{logement[0].host.name}</p>
+          <p className="hostname">{name.map((el, index)=><span key={index}>{el}</span>)}</p>
           <img src={logement[0].host.picture} alt="" />
         </div>
       </div>

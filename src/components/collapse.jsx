@@ -41,11 +41,13 @@ function Collapse({ title, contentCollapse, description }) {
       >
         <div className={`collapse__content__inside ${bIsOpen && "is-active"}`}>
           <ul>
-            {!description ? contentCollapse.map((element,index) => (
-              <li key={index}>{element}</li>
-            )) : <li>{description}</li>
-            
-            }
+            {!description ? (
+              contentCollapse.map((element, index) => (
+                <li key={index}>{element}</li>
+              ))
+            ) : (
+              <li>{description}</li>
+            )}
 
             {/*Climatisation Wi-Fi Cuisine Espace de travail Fer à repasser
             Sèche-cheveux Cintres Climatisation Wi-Fi Cuisine Espace de travail

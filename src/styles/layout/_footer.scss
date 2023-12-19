@@ -12,8 +12,28 @@ footer {
     flex-direction: column;
     align-items: center;
 
+    li {
+      color: #fff;
+      text-align: center;
+      font-family: Montserrat;
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 142.6%; /* 17.112px */
+    }
+
     @include min1080 {
       gap: 28.56px;
+
+      li {
+        color: #fff;
+        text-align: center;
+        font-family: Montserrat;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 34.224px;
+      }
     }
   }
 }

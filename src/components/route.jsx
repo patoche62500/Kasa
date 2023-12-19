@@ -1,9 +1,11 @@
 import ErrorPage from "../pages/Error";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Home from "../pages/Home";
+import Home, { loader as homeLoader } from "../pages/Home";
 import About from "../pages/About";
 import Layout from "../pages/layout";
+
 import Logement, { loader as logementloader } from "../pages/Logement";
+
 
 const router = createBrowserRouter([
   {
@@ -13,6 +15,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
+        loader: homeLoader,
         element: <Home />,
       },
       {

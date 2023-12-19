@@ -1,3 +1,11 @@
+.section__collapse {
+  @include withMax(375, 335);
+
+  @include min1080() {
+    @include withMax(1440, 1023);
+  }
+}
+
 .collapse__component {
   display: flex;
   flex-direction: column;
@@ -54,6 +62,16 @@
   &.is-active {
     padding: 16px 20px;
   }
+
+  ul li {
+    color: #ff6060;
+    font-family: Montserrat;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 142.6%; /* 25.668px */
+  }
+
   &__inside {
     transform: translateY(-100px);
     opacity: 0;
