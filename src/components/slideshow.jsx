@@ -9,9 +9,9 @@ function Carrousel({ Image }) {
       <div className="carrousel__img">
         <img src={Image[count]} alt="" />
       </div>
-      {Image.length !== 0 ? (
+      {Image.length !== 1 ? (
         <>
-          {" "}
+          <p className="numerotation">{count + 1}/{Image.length}</p>
           <button
             className="arrow__left"
             onClick={() =>
