@@ -11,13 +11,16 @@
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
-  padding: 50px;
+  
   justify-content: center;
+  margin-bottom: 27px;
 
   @include min1080 {
     gap: 60px;
     border-radius: 25px;
     background: #f6f6f6;
     max-width: 1240px;
+    padding: 50px;
+    margin-bottom: 50px;
   }
 }

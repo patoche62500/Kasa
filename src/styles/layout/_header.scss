@@ -1,15 +1,24 @@
 header {
-  padding: 20px;
+  //padding: 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 1340px;
+  min-width: 335px;
+  max-width: 1240px;
   margin: auto;
+  margin-top: 20px;
+  margin-bottom: 27px;
+  margin-left:20px;
+  margin-right:20px;
 
   @include min1080 {
-    @include withMax(1440, 1240);
-    padding-top: 45px;
-    padding-bottom: 50px;
+    //@include withMax(1440, 1240);
+    margin-top: 45px;
+    margin-bottom: 50px;
+    //padding-top: 45px;
+    //padding-bottom: 50px;
+    margin-left:100px;
+  margin-right:100px;
   }
 
   nav {

@@ -26,7 +26,7 @@ export async function loader({ params }) {
 function Logement() {
   const { logement } = useLoaderData();
 
-  const name = logement[0].host.name.split(' ');
+  const name = logement[0].host.name.split(" ");
 
   //console.log(logement[0].pictures[0])
 
@@ -72,21 +72,31 @@ function Logement() {
   return (
     <section className="section__logement">
       {<Slideshow Image={logement[0].pictures} />}
-      <h2>{logement[0].title}</h2>
-      <h3>{logement[0].location}</h3>
 
-      <ul className="container__tags">
-        {logement[0].tags.map((element, index) => (
-          <li key={index} className="tag__element">{element}</li>
-        ))}
-      </ul>
+      <div className="container__logement">
+        <div className="container__logement__description">
+          <h2>{logement[0].title}</h2>
+          <h3>{logement[0].location}</h3>
 
-      <div className="container__rating__host">
-        <ul className="container__rating">{elementsForLoop}</ul>
+          <ul className="container__tags">
+            {logement[0].tags.map((element, index) => (
+              <li key={index} className="tag__element">
+                {element}
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div className="container__rating__host">
+          <ul className="container__rating">{elementsForLoop}</ul>
 
-        <div>
-          <p className="hostname">{name.map((el, index)=><span key={index}>{el}</span>)}</p>
-          <img src={logement[0].host.picture} alt="" />
+          <div>
+            <p className="hostname">
+              {name.map((el, index) => (
+                <span key={index}>{el}</span>
+              ))}
+            </p>
+            <img src={logement[0].host.picture} alt="" />
+          </div>
         </div>
       </div>
 

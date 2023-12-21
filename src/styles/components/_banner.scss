@@ -1,9 +1,11 @@
 .section__banner {
   display: flex;
   justify-content: center;
+  margin: auto;
   margin-bottom: 22px;
-  padding: 0px 50px 0px 50px;
-
+  //padding: 0px 50px 0px 50px;
+  max-width: 1240px;
+  
   @include min1080 {
     margin-bottom: 43px;
   }
@@ -12,8 +14,11 @@
 .container__banner {
   max-width: 1240px;
   min-width: 335px;
-  width: 100%;
+  
   position: relative;
+  @include min1080 {
+    width: 100%;
+  }
 
   .container__banner--img {
     max-height: 111px;
