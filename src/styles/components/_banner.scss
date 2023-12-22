@@ -30,12 +30,13 @@
   img {
     //position: absolute;
     border-radius: 25px;
-    width: 100%;
-    max-height: 111px;
+    width: 335px;
+    height: 111px;
     object-fit: cover;
 
     @include min1080 {
-      max-height: 223px;
+      height: 223px;
+      width: 1240px;
     }
   }
 
