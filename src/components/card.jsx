@@ -7,7 +7,7 @@ function card({ title, cover }) {
 
   return (
     <Link className="" to={`logements/${slug}`}>
-      <img src={cover} alt="" />
+      <img src={cover} alt={title} />
       <div className="container__card__background">
         <p>{title}</p>
       </div>
