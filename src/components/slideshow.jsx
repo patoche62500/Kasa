@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 
-function Slideshow({ image }) {
+function Slideshow({ image, title }) {
   let [count, setCount] = useState(0);
   //console.log(Image.length)
 
   return (
     <div className="container__carrousel">
       <div className="carrousel__img">
-        <img src={image[count]} alt="" />
+        <img src={image[count]} alt={`${title} photos du logement numéro : ${count}`} />
       </div>
       {image.length !== 1 ? (
         <>
