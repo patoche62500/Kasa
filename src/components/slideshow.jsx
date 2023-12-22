@@ -1,21 +1,21 @@
 import React, { useState } from "react";
 
-function Slideshow({ Image }) {
+function Slideshow({ image }) {
   let [count, setCount] = useState(0);
   //console.log(Image.length)
 
   return (
     <div className="container__carrousel">
       <div className="carrousel__img">
-        <img src={Image[count]} alt="" />
+        <img src={image[count]} alt="" />
       </div>
-      {Image.length !== 1 ? (
+      {image.length !== 1 ? (
         <>
-          <p className="numerotation">{count + 1}/{Image.length}</p>
+          <p className="numerotation">{count + 1}/{image.length}</p>
           <button
             className="arrow__left"
             onClick={() =>
-              setCount(count === 0 ? (count = Image.length - 1) : count - 1)
+              setCount(count === 0 ? (count = image.length - 1) : count - 1)
             }
           >
             <svg
@@ -34,7 +34,7 @@ function Slideshow({ Image }) {
           <button
             className="arrow__right"
             onClick={() =>
-              setCount(count === Image.length - 1 ? (count = 0) : count + 1)
+              setCount(count === image.length - 1 ? (count = 0) : count + 1)
             }
           >
             <svg
