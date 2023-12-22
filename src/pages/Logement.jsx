@@ -71,7 +71,7 @@ function Logement() {
 
   return (
     <section className="section__logement">
-      {<Slideshow Image={logement[0].pictures} />}
+      {<Slideshow image={logement[0].pictures} />}
 
       <div className="container__logement">
         <div className="container__logement__description">
