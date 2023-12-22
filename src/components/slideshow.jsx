@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function Carrousel({ Image }) {
+function Slideshow({ Image }) {
   let [count, setCount] = useState(0);
   //console.log(Image.length)
 
@@ -68,4 +68,4 @@ function Carrousel({ Image }) {
   );
 }
 
-export default Carrousel;
+export default Slideshow;
