@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 
 function Collapse({ title, contentCollapse, description }) {
   const content = useRef(null);
-  const [maxHeightContent, setMaxHeightContent] = useState("0px");
+  const [maxHeightContent, setMaxHeightContent] = useState("0");
   const [bIsOpen, setbIsOpen] = useState(false);
 
   useEffect(() => {
@@ -11,9 +11,10 @@ function Collapse({ title, contentCollapse, description }) {
       // 32 et les padding du container 16 en haut 16 en bas
       setMaxHeightContent(`${content.current.scrollHeight + 32}px`);
     } else {
-      setMaxHeightContent("0px");
+      setMaxHeightContent("0");
     }
   }, [bIsOpen]);
+
   return (
     <div className="container__collapse">
       <div className="collapse__box">
@@ -48,12 +49,6 @@ function Collapse({ title, contentCollapse, description }) {
             ) : (
               <li>{description}</li>
             )}
-
-            {/*Climatisation Wi-Fi Cuisine Espace de travail Fer à repasser
-            Sèche-cheveux Cintres Climatisation Wi-Fi Cuisine Espace de travail
-            Fer à repasser Sèche-cheveux CintresClimatisation Wi-Fi Cuisine
-            Espace de travail Fer à repasser Sèche-cheveux CintresClimatisation
-      Wi-Fi Cuisine Espace de travail Fer à repasser Sèche-cheveux Cintres*/}
           </ul>
         </div>
       </div>

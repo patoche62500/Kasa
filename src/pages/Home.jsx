@@ -5,18 +5,22 @@ import Galery from "../components/galery";
 import imageSrc from "../assets/banner/banner.png";
 import JsonData from "../datas/logements.json";
 
-export async function loader() {
+export const loader = () => {
   const logements = JsonData;
 
   return { logements };
-}
+};
 
 function Home() {
   const { logements } = useLoaderData();
 
   return (
     <main>
-      <Banner imageSrc={imageSrc} bIsText={true} />
+      <Banner
+        imageSrc={imageSrc}
+        bIsText={true}
+        imageAlt={"Rocher près de la mer"}
+      />
       <Galery jsonData={logements} />
     </main>
   );
